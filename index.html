@@ -20,7 +20,7 @@
   --dark-soft:#4A3F32;
   --gold:#C9A96E;
   --gold-light:#DBBF8A;
-  --text:#3D352B;hh
+  --text:#3D352B;
   --text-light:#6B6054;
   --divider:rgba(196,102,58,0.15);
 }
@@ -138,7 +138,8 @@ section{padding:clamp(4rem,10vh,8rem) clamp(1.5rem,6vw,8rem)}
 .review-card{background:var(--warm-white);padding:2rem;border-radius:3px;border:1px solid var(--divider);position:relative}
 .review-stars{color:var(--gold);font-size:.9rem;letter-spacing:2px;margin-bottom:1rem}
 .review-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.7;color:var(--text);font-style:italic;margin-bottom:1.2rem}
-.review-author{font-size:.78rem;font-weight:600;color:var(--terracotta);letter-spacing:.08em;text-transform:uppercase}
+.review-author{font-size:.78rem;font-weight:600;color:var(--terracotta);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:color .3s ease}
+.review-author:hover{color:var(--terracotta-dark)}
 .review-source{font-size:.68rem;color:var(--text-light);margin-top:.2rem}
 
 /* === ORDER BANNER === */
@@ -159,7 +160,10 @@ section{padding:clamp(4rem,10vh,8rem) clamp(1.5rem,6vw,8rem)}
 .hours-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid rgba(250,246,241,.06);font-size:.88rem}
 .hours-row .day{color:rgba(250,246,241,.5);font-weight:400}
 .hours-row .time{color:rgba(250,246,241,.8);font-weight:500}
-.info-block .phone-link{font-size:1.1rem;color:var(--gold);font-weight:500;margin-bottom:.5rem}
+.info-block .phone-link{font-size:1.1rem;color:var(--gold);font-weight:500;margin-bottom:.8rem}
+.social-row{display:flex;gap:1rem;margin-top:.8rem}
+.social-icon{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(250,246,241,.15);color:rgba(250,246,241,.6);transition:all .3s ease}
+.social-icon:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
 
 /* === MAP === */
 .map-section{padding:0;height:350px;position:relative;background:var(--dark-soft)}
@@ -281,28 +285,12 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
-<!-- Food Gallery Strip -->
-<div class="food-strip">
-  <div class="food-strip-item">
-    <img src="ciamei-seafood-pasta.jpg" alt="Seafood pasta with mussels and calamari at Ciamei" loading="lazy">
-    <div class="overlay"><span class="food-strip-caption">Fresh seafood pasta</span></div>
-  </div>
-  <div class="food-strip-item">
-    <img src="ciamie-pizza.jpg" alt="Wood-fired thin base pizza at Ciamei" loading="lazy">
-    <div class="overlay"><span class="food-strip-caption">Wood-fired pizza</span></div>
-  </div>
-  <div class="food-strip-item">
-    <img src="Ciamei-pasta-dish.jpg" alt="Handmade pasta with peas and parmesan at Ciamei" loading="lazy">
-    <div class="overlay"><span class="food-strip-caption">Handmade pasta</span></div>
-  </div>
-</div>
-
 <!-- Menu -->
 <section class="menu-section" id="menu">
   <div class="section-label">Il Menu</div>
   <h2 class="section-title" style="color:var(--dark)">Made with <em>love</em>, served with pride</h2>
   <p class="menu-intro">Fresh Italian classics prepared daily with ingredients we're proud of.</p>
-  <div class="byob-badge">🍷 BYOB Welcome — €10 corkage per table</div>
+  <div class="byob-badge">BYOB Welcome — €10 corkage per table</div>
 
   <div class="menu-tabs">
     <button class="menu-tab active" data-tab="starters">Starters</button>
@@ -316,7 +304,7 @@ footer a{color:var(--gold);text-decoration:none}
 
   <!-- STARTERS -->
   <div class="menu-panel active" id="tab-starters">
-    <h3 class="menu-category-title">alt="Handmade pasta with peas and parmesan at Ciamei" loading="lazy"> </div> </div> </div> <!-- Menu --> <section class="menu-section"Starters</h3>
+    <h3 class="menu-category-title">Starters</h3>
     <div class="menu-items-grid">
       <div class="menu-item-card"><div class="menu-item-info"><div class="menu-item-name">Fritto Misto</div><div class="menu-item-desc">Fried fresh catch squid and prawns with lemon garnish</div></div><div class="menu-item-price">€12.95</div></div>
       <div class="menu-item-card"><div class="menu-item-info"><div class="menu-item-name">3 Arancini</div><div class="menu-item-desc">Golden fried risotto balls</div></div><div class="menu-item-price">€12.00</div></div>
@@ -409,7 +397,7 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="menu-item-card"><div class="menu-item-info"><div class="menu-item-name">Pear Juice</div></div><div class="menu-item-price">€2.50</div></div>
       <div class="menu-item-card"><div class="menu-item-info"><div class="menu-item-name">Strawberry Juice</div></div><div class="menu-item-price">€2.50</div></div>
     </div>
-    <h3 class="menu-category-title" style="margin-top:2rem"><span class="cat-icon">👧</span> Kids</h3>
+    <h3 class="menu-category-title" style="margin-top:2rem">Kids</h3>
     <div class="menu-items-grid">
       <div class="menu-item-card"><div class="menu-item-info"><div class="menu-item-name">Kids Meal</div><div class="menu-item-desc">Main + Drink</div></div><div class="menu-item-price">€12.00</div></div>
     </div>
@@ -435,19 +423,19 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="review-card reveal">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Fantastic authentic Italian food. Claudio is a great host and clearly passionate about his business. The fritto misto and tiramisù are highlights."</p>
-      <div class="review-author">TripAdvisor Review</div>
+      <a href="https://www.tripadvisor.ie/Restaurant_Review-g10536946-d8858965-Reviews-Ciamei_Cafe-Blackrock_County_Dublin.html" target="_blank" rel="noopener" class="review-author">TripAdvisor Review →</a>
       <div class="review-source">5 stars</div>
     </div>
     <div class="review-card reveal">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Beautiful authentic food, perfect portion sizes, very friendly service — without question one of the best places to eat in Blackrock."</p>
-      <div class="review-author">Google Review</div>
+      <a href="https://maps.app.goo.gl/blackrock-market" target="_blank" rel="noopener" class="review-author">Google Review →</a>
       <div class="review-source">5 stars</div>
     </div>
     <div class="review-card reveal">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"A hidden gem at the back of Blackrock Market. The pasta dishes are made from the freshest ingredients and the tastes are incredible."</p>
-      <div class="review-author">TripAdvisor Review</div>
+      <a href="https://www.tripadvisor.ie/Restaurant_Review-g10536946-d8858965-Reviews-Ciamei_Cafe-Blackrock_County_Dublin.html" target="_blank" rel="noopener" class="review-author">TripAdvisor Review →</a>
       <div class="review-source">5 stars</div>
     </div>
   </div>
@@ -469,9 +457,17 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="info-block reveal">
       <h3>Contact</h3>
       <a href="tel:0868978418" class="phone-link">086 897 8418</a>
-      <a href="mailto:ciameicafe@gmail.com">ciameicafe@gmail.com</a>
-      <a href="https://www.instagram.com/ciameicafe/" target="_blank" rel="noopener">@ciameicafe on Instagram</a>
-      <a href="https://www.facebook.com/thisisciameicafe/" target="_blank" rel="noopener">Ciamei Cafe on Facebook</a>
+      <div class="social-row">
+        <a href="mailto:ciameicafe@gmail.com" class="social-icon" title="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ciameicafe/" target="_blank" rel="noopener" class="social-icon" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/thisisciameicafe/" target="_blank" rel="noopener" class="social-icon" title="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
     </div>
     <div class="info-block reveal">
       <h3>Location</h3>
@@ -483,7 +479,7 @@ footer a{color:var(--gold);text-decoration:none}
 
 <!-- Map -->
 <div class="map-section">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2383.1234567!2d-6.1779!3d53.30156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486710b5e3c1f38b%3A0xc52f1e9e2f0bd3f6!2sBlackrock%20Market!5e0!3m2!1sen!2sie!4v1700000000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ciamei location at Blackrock Market"></iframe>
+  <iframe src="https://maps.google.com/maps?q=Blackrock+Market+19A+Main+Street+Blackrock+Dublin+Ireland&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ciamei location at Blackrock Market"></iframe>
 </div>
 
 <!-- Footer -->
@@ -493,10 +489,10 @@ footer a{color:var(--gold);text-decoration:none}
 </footer>
 
 <script>
-// Preloader
-window.addEventListener('load',()=>{
-  setTimeout(()=>document.getElementById('preloader').classList.add('hidden'),800);
-});
+// Preloader - hide after load or after 2s fallback
+function hidePreloader(){document.getElementById('preloader').classList.add('hidden')}
+window.addEventListener('load',()=>setTimeout(hidePreloader,800));
+setTimeout(hidePreloader,2000);
 
 // Nav scroll
 const nav=document.getElementById('nav');
@@ -537,15 +533,4 @@ document.querySelectorAll('.menu-tab').forEach(tab=>{
 // Scroll reveal
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('visible'),i*80);
-      observer.unobserve(e.target);
-    }
-  });
-},{threshold:0.15});
-reveals.forEach(el=>observer.observe(el));
-</script>
-
-</body>
-</html>
+  entries
