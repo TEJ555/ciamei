@@ -221,6 +221,10 @@ footer a{color:var(--gold);text-decoration:none}
 <div class="preloader" id="preloader">
   <img src="ciamei-logo-white.png" alt="Ciamei" class="preloader-logo">
 </div>
+<script>
+// Early preloader dismissal
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('preloader').classList.add('hidden')},600)});
+</script>
 
 <!-- Nav -->
 <nav id="nav">
@@ -489,10 +493,11 @@ footer a{color:var(--gold);text-decoration:none}
 </footer>
 
 <script>
-// Preloader - hide after load or after 2s fallback
-function hidePreloader(){document.getElementById('preloader').classList.add('hidden')}
-window.addEventListener('load',()=>setTimeout(hidePreloader,800));
-setTimeout(hidePreloader,2000);
+// Preloader - multiple fallbacks to ensure it always clears
+function hidePreloader(){var p=document.getElementById('preloader');if(p)p.classList.add('hidden')}
+window.addEventListener('load',function(){setTimeout(hidePreloader,600)});
+document.addEventListener('DOMContentLoaded',function(){setTimeout(hidePreloader,1500)});
+setTimeout(hidePreloader,2500);
 
 // Nav scroll
 const nav=document.getElementById('nav');
