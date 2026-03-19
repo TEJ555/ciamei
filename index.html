@@ -160,8 +160,8 @@ section{padding:clamp(4rem,10vh,8rem) clamp(1.5rem,6vw,8rem)}
 .hours-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid rgba(250,246,241,.06);font-size:.88rem}
 .hours-row .day{color:rgba(250,246,241,.5);font-weight:400}
 .hours-row .time{color:rgba(250,246,241,.8);font-weight:500}
-.info-block .phone-link{font-size:1.1rem;color:var(--gold);font-weight:500;margin-bottom:.8rem}
-.social-row{display:flex;gap:1rem;margin-top:.8rem}
+.info-block .phone-link{font-size:1.1rem;color:var(--gold);font-weight:500;margin-bottom:.8rem;text-align:center}
+.social-row{display:flex;gap:1rem;margin-top:.8rem;justify-content:center}
 .social-icon{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(250,246,241,.15);color:rgba(250,246,241,.6);transition:all .3s ease}
 .social-icon:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
 
@@ -424,19 +424,19 @@ window.addEventListener('load',function(){setTimeout(function(){document.getElem
     <h2 class="section-title" style="color:var(--dark)">Loved by <em>locals</em></h2>
   </div>
   <div class="reviews-grid">
-    <div class="review-card reveal">
+    <div class="review-card">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Fantastic authentic Italian food. Claudio is a great host and clearly passionate about his business. The fritto misto and tiramisù are highlights."</p>
       <a href="https://www.tripadvisor.ie/Restaurant_Review-g10536946-d8858965-Reviews-Ciamei_Cafe-Blackrock_County_Dublin.html" target="_blank" rel="noopener" class="review-author">TripAdvisor Review →</a>
       <div class="review-source">5 stars</div>
     </div>
-    <div class="review-card reveal">
+    <div class="review-card">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"Beautiful authentic food, perfect portion sizes, very friendly service — without question one of the best places to eat in Blackrock."</p>
-      <a href="https://maps.app.goo.gl/blackrock-market" target="_blank" rel="noopener" class="review-author">Google Review →</a>
+      <a href="https://www.google.com/maps/search/Ciamei+Cafe+Blackrock+Market+Dublin/" target="_blank" rel="noopener" class="review-author">Google Review →</a>
       <div class="review-source">5 stars</div>
     </div>
-    <div class="review-card reveal">
+    <div class="review-card">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"A hidden gem at the back of Blackrock Market. The pasta dishes are made from the freshest ingredients and the tastes are incredible."</p>
       <a href="https://www.tripadvisor.ie/Restaurant_Review-g10536946-d8858965-Reviews-Ciamei_Cafe-Blackrock_County_Dublin.html" target="_blank" rel="noopener" class="review-author">TripAdvisor Review →</a>
@@ -452,13 +452,13 @@ window.addEventListener('load',function(){setTimeout(function(){document.getElem
     <h2 class="section-title" style="color:var(--cream)">Find us in <em>Blackrock Market</em></h2>
   </div>
   <div class="info-grid">
-    <div class="info-block reveal">
+    <div class="info-block">
       <h3>Opening Hours</h3>
       <div class="hours-row"><span class="day">Lunch</span><span class="time">Wed – Sat, 12:00 – 2:30</span></div>
       <div class="hours-row"><span class="day">Dinner</span><span class="time">Tue – Sat, 6:00 – 8:30</span></div>
       <div class="hours-row"><span class="day">Sun &amp; Mon</span><span class="time">Closed</span></div>
     </div>
-    <div class="info-block reveal">
+    <div class="info-block">
       <h3>Contact</h3>
       <a href="tel:0868978418" class="phone-link">086 897 8418</a>
       <div class="social-row">
@@ -473,7 +473,7 @@ window.addEventListener('load',function(){setTimeout(function(){document.getElem
         </a>
       </div>
     </div>
-    <div class="info-block reveal">
+    <div class="info-block">
       <h3>Location</h3>
       <p>Blackrock Market<br>19A Main Street<br>Blackrock, Co. Dublin</p>
       <p style="margin-top:1rem;font-style:italic;font-size:.82rem">We're tucked away at the back of the market — look for the wood-fired oven!</p>
@@ -538,4 +538,15 @@ document.querySelectorAll('.menu-tab').forEach(tab=>{
 // Scroll reveal
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver((entries)=>{
-  entries
+  entries.forEach((e)=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+reveals.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
